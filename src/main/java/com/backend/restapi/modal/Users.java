@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+
 @Entity
 @Table(name = "user_table")
 public class Users {
@@ -18,7 +21,7 @@ public class Users {
 	@Column(name="fname", nullable=false, length=50)
 	private String fname;
 	
-	@Column(name="lname", nullable=false, length=50)
+	@Column(name="lname", length=50)
 	private String lname;
 	
 	@Column(name="email", nullable=false, unique = true, length=50)	
@@ -30,14 +33,13 @@ public class Users {
 	@Column(name="pass", nullable=false, length = 50)	
 	private String pass;
 	
-	@Column(name="intro")
+	@Column(name="intro", columnDefinition = "TEXT")
 	private String intro;
 	
-	@Column(name="role", nullable=false, columnDefinition="text default 'user'")
-	private String role;
 	
+	@Column(name="role")
+	private String role = "user";
 	
-
 	public Users() {
 		super();
 	}
@@ -59,7 +61,7 @@ public class Users {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
