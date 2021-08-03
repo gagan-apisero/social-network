@@ -38,6 +38,11 @@ public class UserController {
 	    }
 	}
 	
+	@GetMapping("/get_user_by_role/{role}")
+	public List<Users> getUserbyRole(@PathVariable String role){
+		return userServices.listByRole(role);
+	}
+	
 	@PostMapping("/signup")
 	public void add(@RequestBody Users user) {
 		userServices.save(user);

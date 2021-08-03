@@ -33,4 +33,7 @@ public class UserServices {
 		userRepo.deleteById(id);
 	}
 	
+	public List<Users> listByRole(String roleName){
+		return userRepo.findUsersByRole(roleName);
+	}
 }

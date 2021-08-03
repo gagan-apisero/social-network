@@ -1,0 +1,53 @@
+
+
+########USERS API's
+
+@get
+http://localhost:4444/users
+returns list of all users
+
+@get
+http://localhost:4444/get_user/{id}
+return user by id
+
+@get
+http://localhost:4444/get_user_by_role/{role}
+return user by roles
+
+@post
+http://localhost:4444/signup
+create a user/ sign-up
+
+@put
+http://localhost:4444/update_user/{id}
+update a user info by id
+
+@delete
+http://localhost:4444/delete_user/{id}
+delete user by id
+
+####POSTS API's
+
+@get
+http://localhost:4444/posts
+returns list of all the posts
+
+@get
+http://localhost:4444/get_post/{id}
+return post by id
+
+@get
+http://localhost:4444/posts_by_username/{usr}
+return posts by username
+
+@post
+http://localhost:4444/createpost
+will create a post
+
+@put
+http://localhost:4444/update_post/{id}
+to edit a post
+
+@delete
+http://localhost:4444/delete_post/{id}
+delete a post by id
